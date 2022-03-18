@@ -75,3 +75,31 @@ As an example, a ReplicaSet (discussed above) defines how many pods should be ru
 
 ### Container image repository
 A final component to be aware of is the image repository/registry. This component exists outside the cluster and is accessed by administrators and the control plane to download required container definitions. Registries are hosted by a variety of organizations including **Docker Hub** and can be public or private. The major cloud providers all offer managed repositories for enterprise use.
+
+
+
+## Summary: Containers vs Pods vs Clusters
+
+### Container  
+A container is a package with the program to execute and all its dependencies, such as the code, runtime, system libraries, etc, bound together in a box,
+
+### Pod 
+A pod (the smallest deployable unit in Kubernetes) is a group of one or more containers, with shared storage/network resources, and a specification for how to run the containers.  
+Containers for your containers, in a sense.  
+
+### Cluster
+A cluster is a board that provides the circuitry to run all the pods (which have the container instances in them) in an orchestrated manner as defined by the users
+
+So there’s a symbiotic relationship between these terms:
+
+Container → Pod → Cluster
+
+A container runs logically in a pod (though it also uses a container runtime);  
+A group of pods, related or unrelated, run on a cluster. A pod is a unit of replication on a cluster;  
+A cluster can contain many pods, related or unrelated and grouped under the tight logical borders called namespaces.  
+
+
+
+
+
+
